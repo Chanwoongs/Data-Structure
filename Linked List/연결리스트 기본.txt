@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+typedef struct node{
+  int data;
+  struct node* link;
+}Node;
+
+int main() {
+  
+  // Initialization of the head pointer
+  Node* head = NULL;   // Head pointer to point a linked list
+  Node* temp = NULL;
+  
+  // Dynamic memory allocation for the first node
+  head = (Node*)malloc(sizeof(Node));
+  
+  // Assign a value to the data field of the first node
+  head->data = 10;
+  
+  // Assign a value to the link field of the first node
+  head->link = NULL; // The link value of the last node is set to NULL
+  
+  // Dynamic memory allocation for the second node
+  temp = (Node*)malloc(sizeof(Node));
+  
+  // Assign a value to the data field of the second node
+  temp->data = 20;
+  
+  // Assign a value to the link field of the second node
+  temp->link = NULL; // The link value of the last node is set to NULL
+  
+  // Set the link field of the first node to
+  // the address of the second node
+  temp->link = head;
+  head = temp;
+  
+  return 0;
+}
